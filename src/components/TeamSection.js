@@ -19,7 +19,7 @@ export default function TeamSection() {
     },
     {
       id: 3,
-      name: 'Jirehvestre Comingo',
+      name: 'Jirehvestre Domingo',
       role: 'Mobile Developer',
       email: 'jirehvestre25434@gmail.com',
       image: '/assets/member-pictures/jv.png'
