@@ -8,6 +8,17 @@ export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
 
+  // Navigation items
+  const navigationItems = [
+    { id: 'hero', label: 'Home' },
+    { id: 'about', label: 'About' },
+    { id: 'features', label: 'Features' },
+    { id: 'download', label: 'Download' },
+    { id: 'team', label: 'Team' },
+    { id: 'contact', label: 'Contact' },
+    { id: 'faq', label: 'FAQ' }
+  ];
+
   // Calculate scroll progress and active section
   useEffect(() => {
     const calculateScrollProgress = () => {
@@ -19,7 +30,7 @@ export default function Navigation() {
 
     const handleActiveSection = () => {
       const sections = navigationItems.map(item => item.id);
-      const scrollPosition = window.scrollY + 100; // Offset for better detection
+      const scrollPosition = window.scrollY + 150; // Increased offset for better detection
 
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = document.getElementById(sections[i]);
@@ -35,9 +46,12 @@ export default function Navigation() {
       handleActiveSection();
     };
 
+    // Initial check
+    handleActiveSection();
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [navigationItems]);
 
   // Smooth scroll to section
   const scrollToSection = (sectionId) => {
@@ -50,16 +64,6 @@ export default function Navigation() {
     }
     setIsMenuOpen(false); // Close mobile menu after click
   };
-
-  const navigationItems = [
-    { id: 'hero', label: 'Home' },
-    { id: 'about', label: 'About' },
-    { id: 'features', label: 'Features' },
-    { id: 'download', label: 'Download' },
-    { id: 'team', label: 'Team' },
-    { id: 'contact', label: 'Contact' },
-    { id: 'faq', label: 'FAQ' }
-  ];
 
   return (
     <>
