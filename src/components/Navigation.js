@@ -142,9 +142,10 @@ export default function Navigation() {
         <div className="navbar-end">
           <button 
             onClick={() => scrollToSection('download')}
-            className="btn btn-primary btn-sm"
+            className="btn btn-primary btn-sm text-white"
           >
-            Get Early Access
+            <i class="fa-solid fa-arrow-down text-white"></i>
+            Download Now!
           </button>
         </div>
         </div>

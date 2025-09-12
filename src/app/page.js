@@ -5,6 +5,7 @@ import FeaturesSection from "../components/FeaturesSection";
 import DownloadSection from "../components/DownloadSection";
 import TeamSection from "../components/TeamSection";
 import ContactSection from "../components/ContactSection";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
@@ -42,13 +43,8 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Footer placeholder */}
-        <footer className="footer footer-center p-10 bg-primary text-primary-content">
-          <div>
-            <p className="font-bold">Tara-Vel</p>
-            <p>Copyright © 2024 - All rights reserved</p>
-          </div>
-        </footer>
+        {/* Footer */}
+        <Footer />
       </main>
     </>
   );

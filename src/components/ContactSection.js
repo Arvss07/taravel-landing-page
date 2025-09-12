@@ -100,7 +100,7 @@ export default function ContactSection() {
   });
 
   return (
-    <section id="contact" className="relative py-20 overflow-hidden">
+    <section id="contact" className="relative top-0 left-0 w-full h-1 overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10">
         
@@ -170,7 +170,7 @@ export default function ContactSection() {
             Get In Touch
           </h2>
           <p className="text-lg md:text-xl text-base-content/70 max-w-3xl mx-auto leading-relaxed">
-            Ready to transform your commute? Have questions about Tara-Vel? We'd love to hear from you! 
+            Ready to transform your commute? Have questions about Tara-Vel? We&apos;d love to hear from you! 
             Connect with us through any of these channels.
           </p>
         </div>
@@ -259,7 +259,7 @@ export default function ContactSection() {
                     Scan to Follow Our Journey
                   </h3>
                   <p className="text-base-content/80 mb-6 text-lg">
-                    Scan this QR code to instantly follow our Facebook page and stay updated with Tara-Vel's latest developments!
+                    Scan this QR code to instantly follow our Facebook page and stay updated with Tara-Vel&apos;s latest developments!
                   </p>
                   <a 
                     href="https://www.facebook.com/share/17DB8fhPL9/" 

@@ -231,7 +231,7 @@ export default function ProblemSolutionSection() {
                   <div>
                     <h4 className="font-semibold mb-1 text-sm">Real-Time Tracking</h4>
                     <p className="text-base-content/70 text-sm">
-                      Know exactly where your ride is and when it's arriving.
+                      Know exactly where your ride is and when it&apos;s arriving.
                     </p>
                   </div>
 
@@ -265,7 +265,7 @@ export default function ProblemSolutionSection() {
                 </div>
 
                 <p className="text-base-content/80 text-sm leading-relaxed">
-                  Commuters face uncertainty with missed rides, unclear routes, and overcrowded vehicles. Tara-Vel bridges that gap, providing reliable information and inclusive tools tailored to Tuguegarao's commuting public.
+                  Commuters face uncertainty with missed rides, unclear routes, and overcrowded vehicles. Tara-Vel bridges that gap, providing reliable information and inclusive tools tailored to Tuguegarao&apos;s commuting public.
                 </p>
 
                 <div className="mt-4">

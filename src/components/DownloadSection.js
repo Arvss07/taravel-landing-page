@@ -149,7 +149,7 @@ export default function DownloadSection() {
               </div>
               <h3 className="text-2xl font-bold text-base-content mb-4">Android</h3>
               <p className="text-base-content/70 mb-6">
-                Coming soon to Google Play Store. Get notified when it's available.
+                Coming soon to Google Play Store. Get notified when it&apos;s available.
               </p>
               <div className="space-y-3">
                 <a
