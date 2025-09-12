@@ -168,17 +168,6 @@ export default function HeroSection() {
               Your Smart Public Transportation Companion for Cagayan Valley
             </p>
             
-            {/* Download Buttons */}
-            <div className="space-y-4 mb-8">
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button className="btn btn-secondary btn-lg flex-1 sm:flex-none text-white">
-                  Get Early Access
-                </button>
-                <button className="btn btn-outline btn-lg flex-1 sm:flex-none">
-                  Learn More
-                </button>
-              </div>
-            </div>
 
             {/* App Store Badges */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
