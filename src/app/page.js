@@ -1,5 +1,9 @@
 import Navigation from '../components/Navigation';
 import HeroSection from '../components/HeroSection';
+import ProblemSolutionSection from '../components/ProblemSolutionSection';
+import FeaturesSection from '../components/FeaturesSection';
+import DownloadSection from '../components/DownloadSection';
+import TeamSection from '../components/TeamSection';
 
 export default function Home() {
   return (
@@ -12,34 +16,17 @@ export default function Home() {
         {/* Hero Section */}
         <HeroSection />
 
-        {/* Placeholder sections for future development */}
-        <section id="about" className="min-h-96 bg-base-200 flex items-center justify-center">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold mb-4">About Section</h2>
-            <p>Problem & Solution content will go here</p>
-          </div>
-        </section>
+        {/* Problem & Solution Section */}
+        <ProblemSolutionSection />
 
-        <section id="features" className="min-h-96 bg-base-100 flex items-center justify-center">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold mb-4">Features Section</h2>
-            <p>Key features content will go here</p>
-          </div>
-        </section>
+        {/* Features Section */}
+        <FeaturesSection />
 
-        <section id="download" className="min-h-96 bg-base-200 flex items-center justify-center">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold mb-4">Download Section</h2>
-            <p>Download links and QR code will go here</p>
-          </div>
-        </section>
+        {/* Download Section */}
+        <DownloadSection />
 
-        <section id="team" className="min-h-96 bg-base-100 flex items-center justify-center">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold mb-4">Team Section</h2>
-            <p>Developer team cards will go here</p>
-          </div>
-        </section>
+        {/* Team Section */}
+        <TeamSection />
 
         <section id="contact" className="min-h-96 bg-base-200 flex items-center justify-center">
           <div className="text-center">
