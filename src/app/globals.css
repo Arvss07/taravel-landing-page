@@ -3,7 +3,7 @@
 
 @plugin "daisyui/theme" {
     name: "taravel";
-    default: false;
+    default: true;
     prefersdark: false;
     color-scheme: "light";
     --color-base-100: oklch(100% 0 0);
@@ -40,4 +40,9 @@
 /* Set Poppins as the default font family */
 body {
   font-family: var(--font-poppins), sans-serif;
+}
+
+/* Ensure buttons use the theme's border radius */
+.btn {
+  border-radius: var(--radius-field) !important;
 }

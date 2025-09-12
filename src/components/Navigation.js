@@ -6,8 +6,9 @@ import Image from 'next/image';
 export default function Navigation() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('hero');
 
-  // Calculate scroll progress
+  // Calculate scroll progress and active section
   useEffect(() => {
     const calculateScrollProgress = () => {
       const scrollTop = window.scrollY;
@@ -16,8 +17,26 @@ export default function Navigation() {
       setScrollProgress(progress);
     };
 
-    window.addEventListener('scroll', calculateScrollProgress);
-    return () => window.removeEventListener('scroll', calculateScrollProgress);
+    const handleActiveSection = () => {
+      const sections = navigationItems.map(item => item.id);
+      const scrollPosition = window.scrollY + 100; // Offset for better detection
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = document.getElementById(sections[i]);
+        if (section && section.offsetTop <= scrollPosition) {
+          setActiveSection(sections[i]);
+          break;
+        }
+      }
+    };
+
+    const handleScroll = () => {
+      calculateScrollProgress();
+      handleActiveSection();
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   // Smooth scroll to section
@@ -57,12 +76,10 @@ export default function Navigation() {
         <div className="navbar bg-base-100/95 backdrop-blur-md shadow-lg rounded-2xl">
         {/* Mobile Menu Button & Logo */}
         <div className="navbar-start">
-          <div className="dropdown">
-            <div 
-              tabIndex={0} 
-              role="button" 
-              className="btn btn-ghost lg:hidden"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
+          <div className="lg:hidden">
+            <button 
+              className="btn btn-ghost"
+              onClick={() => setIsMenuOpen(true)}
             >
               <svg 
                 className="w-5 h-5" 
@@ -77,24 +94,7 @@ export default function Navigation() {
                   d="M4 6h16M4 12h8m-8 6h16" 
                 />
               </svg>
-            </div>
-            {isMenuOpen && (
-              <ul 
-                tabIndex={0} 
-                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
-              >
-                {navigationItems.map((item) => (
-                  <li key={item.id}>
-                    <button 
-                      onClick={() => scrollToSection(item.id)}
-                      className="text-base-content hover:text-primary"
-                    >
-                      {item.label}
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            )}
+            </button>
           </div>
           
           {/* Logo */}
@@ -121,7 +121,11 @@ export default function Navigation() {
               <li key={item.id}>
                 <button 
                   onClick={() => scrollToSection(item.id)}
-                  className="text-base-content hover:text-primary font-medium transition-colors"
+                  className={`font-medium transition-colors ${
+                    activeSection === item.id 
+                      ? 'text-primary bg-primary/10' 
+                      : 'text-base-content hover:text-primary'
+                  }`}
                 >
                   {item.label}
                 </button>
@@ -141,6 +145,82 @@ export default function Navigation() {
         </div>
         </div>
       </div>
+
+      {/* Mobile Sidebar */}
+      {isMenuOpen && (
+        <>
+          {/* Backdrop */}
+          <div 
+            className="fixed inset-0 bg-black/50 z-50 lg:hidden"
+            onClick={() => setIsMenuOpen(false)}
+          />
+          
+          {/* Sidebar */}
+          <div className="fixed top-0 left-0 w-80 h-full bg-base-100 z-50 lg:hidden shadow-2xl">
+            {/* Header */}
+            <div className="flex items-center justify-between p-6 border-b border-base-300">
+              <div className="flex items-center gap-3">
+                <Image
+                  src="/taravel.svg"
+                  alt="Tara-Vel Logo"
+                  width={32}
+                  height={32}
+                  className="w-8 h-8"
+                />
+                <span className="text-xl font-bold text-primary">Tara-Vel</span>
+              </div>
+              
+              {/* Close Button */}
+              <button 
+                className="btn btn-ghost btn-sm"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+
+            {/* Navigation Menu */}
+            <div className="p-6">
+              <ul className="space-y-2">
+                {navigationItems.map((item) => (
+                  <li key={item.id}>
+                    <button 
+                      onClick={() => scrollToSection(item.id)}
+                      className={`w-full text-left p-3 rounded-lg font-medium transition-colors ${
+                        activeSection === item.id 
+                          ? 'text-primary bg-primary/10 border border-primary/20' 
+                          : 'text-base-content hover:text-primary hover:bg-base-200'
+                      }`}
+                    >
+                      <div className="flex items-center gap-3">
+                        <div className={`w-2 h-2 rounded-full ${
+                          activeSection === item.id ? 'bg-primary' : 'bg-base-300'
+                        }`} />
+                        {item.label}
+                      </div>
+                    </button>
+                  </li>
+                ))}
+              </ul>
+
+              {/* CTA Button in Sidebar */}
+              <div className="mt-8">
+                <button 
+                  onClick={() => {
+                    scrollToSection('download');
+                    setIsMenuOpen(false);
+                  }}
+                  className="btn btn-primary w-full"
+                >
+                  Get Early Access
+                </button>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
     </>
   );
 }
