@@ -73,34 +73,34 @@ export default function DownloadSection() {
   });
 
   return (
-    <section id="download" className="relative py-20 bg-gradient-to-b from-base-200 to-base-100 overflow-hidden">
+    <section id="download" className="relative min-h-screen overflow-hidden pt-24">
       {/* Animated SVG Background */}
-      <div className="absolute inset-0">
-        {/* Subtle gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/3 via-transparent to-accent/3"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10">
         
-        {/* SVG Blobs */}
-        <svg className="absolute top-0 left-0 w-full h-full" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
-          {/* Download theme blobs */}
-          <path 
-            d="M150 200C150 150 200 100 250 100C300 100 350 150 350 200C350 250 300 300 250 300C200 300 150 250 150 200Z" 
-            fill="url(#downloadGradient)" 
-            className="floating-blob"
-            style={{animationDelay: '0s'}}
+        {/* SVG Blob Shapes */}
+        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1200 800" fill="none">
+          {/* Blob 1 */}
+          <path
+            className="blob-1"
+            d="M300,200 C400,150 500,250 450,350 C400,450 300,400 200,350 C100,300 150,200 300,200Z"
+            fill="url(#gradient1)"
+            opacity="0.6"
           />
           
-          <path 
-            d="M800 300C800 250 850 200 900 200C950 200 1000 250 1000 300C1000 350 950 400 900 400C850 400 800 350 800 300Z" 
-            fill="url(#mobileGradient)" 
-            className="floating-blob"
-            style={{animationDelay: '1s'}}
+          {/* Blob 2 */}
+          <path
+            className="blob-2"
+            d="M800,100 C900,80 1000,180 950,280 C900,380 800,350 700,280 C600,210 650,120 800,100Z"
+            fill="url(#gradient2)"
+            opacity="0.5"
           />
           
-          <path 
-            d="M400 500C400 450 450 400 500 400C550 400 600 450 600 500C600 550 550 600 500 600C450 600 400 550 400 500Z" 
-            fill="url(#qrGradient)" 
-            className="floating-blob"
-            style={{animationDelay: '2s'}}
+          {/* Blob 3 */}
+          <path
+            className="blob-3"
+            d="M1000,500 C1100,450 1150,550 1100,650 C1050,750 950,700 900,650 C850,600 900,500 1000,500Z"
+            fill="url(#gradient3)"
+            opacity="0.4"
           />
           
           {/* Gradients */}

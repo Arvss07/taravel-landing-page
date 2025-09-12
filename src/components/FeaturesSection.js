@@ -114,14 +114,12 @@ export default function FeaturesSection() {
   ];
 
   return (
-    <section id="features" className="relative py-20 bg-gradient-to-b from-base-100 to-base-200 overflow-hidden">
+    <section id="features" className="relative py-20 overflow-hidden">
       {/* Animated SVG Background */}
-      <div className="absolute inset-0">
-        {/* Subtle gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/3 via-transparent to-secondary/3"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10">
         
         {/* SVG Blobs */}
-        <svg className="absolute top-0 left-0 w-full h-full" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg className="absolute top-0 left-0 w-full h-full" viewBox="0 0 1200 800" fill="none">
           {/* Blue blob for GPS tracking */}
           <path 
             d="M200 150C200 100 250 50 300 50C350 50 400 100 400 150C400 200 350 250 300 250C250 250 200 200 200 150Z" 

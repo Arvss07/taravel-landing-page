@@ -52,7 +52,7 @@ export default function ProblemSolutionSection() {
   return (
     <section id="about" className="relative py-20 overflow-hidden">
       {/* Animated Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 to-accent/5">
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10">
         {/* SVG Blob Shapes */}
         <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1200 800" fill="none">
           {/* Problem-themed blob */}
