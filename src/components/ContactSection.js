@@ -100,7 +100,7 @@ export default function ContactSection() {
   });
 
   return (
-    <section id="contact" className="relative top-0 left-0 w-full h-1 overflow-hidden">
+    <section id="contact" className="relative py-20 min-h-screen">
       {/* Animated Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10">
         
