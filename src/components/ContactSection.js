@@ -170,7 +170,7 @@ export default function ContactSection() {
             Get In Touch
           </h2>
           <p className="text-lg md:text-xl text-base-content/70 max-w-3xl mx-auto leading-relaxed">
-            Ready to transform your commute? Have questions about Tara-Vel? We&apos;d love to hear from you! 
+            Have questions about Tara-Vel? We&apos;d love to hear from you! 
             Connect with us through any of these channels.
           </p>
         </div>
