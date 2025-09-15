@@ -100,7 +100,7 @@ export default function ContactSection() {
   });
 
   return (
-    <section id="contact" className="relative top-0 left-0 w-full h-1 overflow-hidden">
+    <section id="contact" className="relative py-20 min-h-screen">
       {/* Animated Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10">
         
@@ -170,7 +170,7 @@ export default function ContactSection() {
             Get In Touch
           </h2>
           <p className="text-lg md:text-xl text-base-content/70 max-w-3xl mx-auto leading-relaxed">
-            Ready to transform your commute? Have questions about Tara-Vel? We&apos;d love to hear from you! 
+            Have questions about Tara-Vel? We&apos;d love to hear from you! 
             Connect with us through any of these channels.
           </p>
         </div>
@@ -207,10 +207,10 @@ export default function ContactSection() {
               <p className="text-base-content/70 mb-6 text-lg">Send us detailed inquiries and feedback</p>
               <a 
                 href="mailto:taravelofficial.ph@gmail.com"
-                className="btn btn-success btn-lg w-full group-hover:scale-105 transition-transform"
+                className="btn btn-outline btn-success btn-lg w-full group-hover:scale-105 transition-transform border-2 border-green-600 text-green-700 hover:bg-green-600 hover:text-white flex items-center justify-center"
               >
-                <i className="fas fa-envelope mr-2"></i>
-                Send Email
+                <i className="fas fa-envelope mr-2 text-green-600 group-hover:text-white"></i>
+                <span className="font-semibold">Send Email</span>
               </a>
             </div>
           </div>

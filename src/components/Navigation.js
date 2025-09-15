@@ -144,7 +144,7 @@ export default function Navigation() {
             onClick={() => scrollToSection('download')}
             className="btn btn-primary btn-sm text-white"
           >
-            <i class="fa-solid fa-arrow-down text-white"></i>
+            <i className="fa-solid fa-arrow-down text-white"></i>
             Download Now!
           </button>
         </div>
