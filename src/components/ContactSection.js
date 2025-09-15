@@ -207,10 +207,10 @@ export default function ContactSection() {
               <p className="text-base-content/70 mb-6 text-lg">Send us detailed inquiries and feedback</p>
               <a 
                 href="mailto:taravelofficial.ph@gmail.com"
-                className="btn btn-success btn-lg w-full group-hover:scale-105 transition-transform"
+                className="btn btn-outline btn-success btn-lg w-full group-hover:scale-105 transition-transform border-2 border-green-600 text-green-700 hover:bg-green-600 hover:text-white flex items-center justify-center"
               >
-                <i className="fas fa-envelope mr-2"></i>
-                Send Email
+                <i className="fas fa-envelope mr-2 text-green-600 group-hover:text-white"></i>
+                <span className="font-semibold">Send Email</span>
               </a>
             </div>
           </div>
