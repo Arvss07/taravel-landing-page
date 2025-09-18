@@ -97,6 +97,25 @@ export default function ContactSection() {
       ease: "none",
       repeat: -1
     });
+
+    // Add floating motion to blobs
+    gsap.to('.contact-blob', {
+      y: -30,
+      duration: 6,
+      ease: "sine.inOut",
+      yoyo: true,
+      repeat: -1,
+      stagger: 1
+    });
+
+    gsap.to('.contact-blob-2', {
+      y: 20,
+      duration: 8,
+      ease: "sine.inOut",
+      yoyo: true,
+      repeat: -1,
+      stagger: 1.5
+    });
   });
 
   return (
@@ -110,28 +129,28 @@ export default function ContactSection() {
           <path 
             d="M200 100C200 50 250 0 300 0C350 0 400 50 400 100C400 150 350 200 300 200C250 200 200 150 200 100Z" 
             fill="url(#contactGradient1)" 
-            className="contact-blob opacity-20"
+            className="contact-blob opacity-30"
           />
           
           {/* Secondary blob */}
           <path 
             d="M800 600C800 550 850 500 900 500C950 500 1000 550 1000 600C1000 650 950 700 900 700C850 700 800 650 800 600Z" 
             fill="url(#contactGradient2)" 
-            className="contact-blob-2 opacity-15"
+            className="contact-blob-2 opacity-25"
           />
           
           {/* Accent blob */}
           <path 
             d="M1000 200C1000 150 1050 100 1100 100C1150 100 1200 150 1200 200C1200 250 1150 300 1100 300C1050 300 1000 250 1000 200Z" 
             fill="url(#contactGradient3)" 
-            className="contact-blob opacity-10"
+            className="contact-blob opacity-20"
           />
           
           {/* Small decorative blob */}
           <path 
             d="M100 500C100 480 120 460 140 460C160 460 180 480 180 500C180 520 160 540 140 540C120 540 100 520 100 500Z" 
             fill="url(#contactGradient4)" 
-            className="contact-blob-2 opacity-25"
+            className="contact-blob-2 opacity-35"
           />
 
           {/* Gradients */}
@@ -209,7 +228,6 @@ export default function ContactSection() {
                 href="mailto:taravelofficial.ph@gmail.com"
                 className="btn btn-outline btn-success btn-lg w-full group-hover:scale-105 transition-transform border-2 border-green-600 text-green-700 hover:bg-green-600 hover:text-white flex items-center justify-center"
               >
-                <i className="fas fa-envelope mr-2 text-green-600 group-hover:text-white"></i>
                 <span className="font-semibold">Send Email</span>
               </a>
             </div>
@@ -225,9 +243,8 @@ export default function ContactSection() {
               <p className="text-base-content/70 mb-6 text-lg">Speak directly with our team</p>
               <a 
                 href="tel:+639052327405"
-                className="btn btn-outline btn-primary btn-lg w-full group-hover:scale-105 transition-transform"
+                className="btn btn-outline btn-primary btn-lg w-full group-hover:scale-105 transition-transform hover:text-white"
               >
-                <i className="fas fa-phone mr-2"></i>
                 +63 905 232 7405
               </a>
             </div>
