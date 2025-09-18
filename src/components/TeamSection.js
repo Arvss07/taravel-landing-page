@@ -70,7 +70,7 @@ export default function TeamSection() {
       name: 'Jake Russel Agcanas',
       role: 'UI/UX Designer',
       email: 'juniorlazarooo.jr@gmail.com',
-      image: '/assets/member-pictures/jake.png',
+      image: '/assets/member-pictures/jake.jpg',
       color: 'text-green-600',
       bgColor: 'bg-green-50',
       borderColor: 'border-green-200'
@@ -90,7 +90,7 @@ export default function TeamSection() {
       name: 'Jirehvestre Domingo',
       role: 'Mobile Developer',
       email: 'jirehvestre25434@gmail.com',
-      image: '/assets/member-pictures/jv.png',
+      image: '/assets/member-pictures/jv.jpg',
       color: 'text-purple-600',
       bgColor: 'bg-purple-50',
       borderColor: 'border-purple-200'
@@ -100,7 +100,7 @@ export default function TeamSection() {
       name: 'Carl Angelo Obordo',
       role: 'Mobile Developer',
       email: 'carlobordoangelo@gmail.com',
-      image: '/assets/member-pictures/carl.png',
+      image: '/assets/member-pictures/carl.jpg',
       color: 'text-orange-600',
       bgColor: 'bg-orange-50',
       borderColor: 'border-orange-200'
@@ -110,7 +110,7 @@ export default function TeamSection() {
       name: 'Abiel Roj Parungao',
       role: 'Mobile Developer',
       email: 'abielparungao31@gmail.com',
-      image: '/assets/member-pictures/abiel.png',
+      image: '/assets/member-pictures/abiel.jpg',
       color: 'text-pink-600',
       bgColor: 'bg-pink-50',
       borderColor: 'border-pink-200'
