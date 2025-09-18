@@ -5,6 +5,7 @@ import FeaturesSection from "../components/FeaturesSection";
 import DownloadSection from "../components/DownloadSection";
 import TeamSection from "../components/TeamSection";
 import ContactSection from "../components/ContactSection";
+import FAQsSection from "../components/FAQsSection";
 import Footer from "../components/Footer";
 
 export default function Home() {
@@ -33,15 +34,8 @@ export default function Home() {
         {/* Contact Section */}
         <ContactSection />
 
-        <section
-          id="faq"
-          className="min-h-96 bg-base-100 flex items-center justify-center"
-        >
-          <div className="text-center">
-            <h2 className="text-3xl font-bold mb-4">FAQ Section</h2>
-            <p>Frequently asked questions will go here</p>
-          </div>
-        </section>
+        {/* FAQs Section */}
+        <FAQsSection />
 
         {/* Footer */}
         <Footer />

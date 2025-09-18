@@ -102,11 +102,11 @@ export default function Navigation() {
           </div>
           
           {/* Logo */}
-          <button 
+          <div 
             onClick={() => scrollToSection('hero')}
-            className="btn btn-ghost text-xl font-bold text-primary"
+            className="flex items-center gap-2 text-xl font-bold text-primary ml-4"
+            style={{ boxShadow: 'none' }}
           >
-            {/* TODO: Replace with actual Tara-Vel logo */}
             <Image
               src="/taravel.svg"
               alt="Tara-Vel Logo"
@@ -115,7 +115,7 @@ export default function Navigation() {
               className="w-8 h-8"
             />
             <span className="hidden sm:inline">Tara-Vel</span>
-          </button>
+          </div>
         </div>
 
         {/* Desktop Navigation */}
