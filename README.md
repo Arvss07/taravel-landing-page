@@ -13,7 +13,7 @@ The official landing page for **Tara-Vel** - a public transportation companion a
 
 ## 🛠️ Tech Stack
 
-- **Next.js 14** - React framework with App Router
+- **Next.js 15** - React framework with App Router
 - **Tailwind CSS 4** - Utility-first CSS framework
 - **DaisyUI 5** - Component library for Tailwind
 - **GSAP** - Smooth animations and scroll triggers
@@ -39,6 +39,10 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) to view the landing page.
 
+Alternatively, search for [https://www.taravel.app](https://www.taravel.app)
+
+
+
 ## 👥 Team
 
 - **Jake Russel Agcanas** - UI/UX Designer
@@ -47,6 +51,7 @@ Open [http://localhost:3000](http://localhost:3000) to view the landing page.
 - **Carl Angelo Obordo** - Mobile Developer
 - **Abiel Roj Parungao** - Mobile Developer
 
+
 ## 📱 About Tara-Vel
 
-Tara-Vel revolutionizes public transportation in Cagayan Valley by providing real-time tracking, route information, and passenger capacity data. The app helps commuters make informed decisions and enjoy a better transportation experience.
+Tara-Vel is an innovative solution for the public transportation in Cagayan Valley by providing real-time tracking, route information, and passenger capacity data. The app helps commuters make informed decisions and enjoy a better transportation experience.
