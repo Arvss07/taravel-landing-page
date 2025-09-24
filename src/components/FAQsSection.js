@@ -67,33 +67,87 @@ export default function FAQsSection() {
     {
       id: 1,
       question: "What is Tara-Vel and how does it work?",
-      answer: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
+      answer:
+        "Tara-Vel is a mobile app that makes public transportation easier for commuters in Cagayan. It provides real-time updates, helpful tools, and accessible features to make your daily travel more convenient and reliable. Whether you're a student, senior, or regular commuter, Tara-Vel helps you travel with confidence.",
     },
     {
       id: 2,
       question: "Is Tara-Vel completely free to use?",
-      answer: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
+      answer:
+        "Yes, Tara-Vel is completely free to use with no subscriptions, hidden fees, or charges. You get full access to all features without any cost.",
     },
     {
       id: 3,
       question: "How accurate is the real-time GPS tracking?",
-      answer: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
+      answer:
+        "Tara-Vel's real-time GPS tracking is accurate within 5 to 10 meters, though accuracy may vary based on your device quality, signal strength, and surrounding conditions.",
     },
     {
       id: 4,
       question:
         "Can I store my Student ID, PWD ID, or Senior ID for discounts?",
-      answer: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
+      answer:
+        "Yes, you can securely upload your Student, PWD, or Senior ID through the app to verify your eligibility and access available discounts instantly.",
     },
     {
       id: 5,
       question: "What types of vehicles are tracked on Tara-Vel?",
-      answer: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
+      answer:
+        "Tara-Vel tracks Public Utility Vehicles (PUVs) including vans and buses, helping you monitor these common forms of public transportation.",
     },
     {
       id: 6,
       question: "How can I contact the Tara-Vel team for support?",
-      answer: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
+      answer:
+        "You can reach our support team by messaging us on Facebook (Tara-Vel), calling 0905-232-7405, or emailing taravelofficial.ph@gmail.com.",
+    },
+    {
+      id: 7,
+      question: "Do I need internet connection to use Tara-Vel?",
+      answer:
+        "Yes, Tara-Vel requires an active internet connection to provide real-time vehicle tracking, updates, and all app features.",
+    },
+    {
+      id: 8,
+      question: "Why does Tara-Vel need location permission?",
+      answer:
+        "Tara-Vel needs access to your location to show you nearby vehicles and provide accurate updates for your journey.",
+    },
+    {
+      id: 9,
+      question: "My GPS isn't working. How do I fix it?",
+      answer:
+        "First, make sure location/GPS is turned on in your phone's settings. Then go to your app settings, find Tara-Vel, and allow location permissions. If it's still not working, check that you have good signal reception and try restarting the app.",
+    },
+    {
+      id: 10,
+      question: "Is my personal information and uploaded ID safe?",
+      answer:
+        "Yes, your personal information and uploaded IDs are secure. We use industry-standard security measures to protect your data and privacy.",
+    },
+    {
+      id: 11,
+      question: "Does Tara-Vel track my location?",
+      answer:
+        "Yes, Tara-Vel uses your location but only while you're actively using the app. This helps provide accurate updates for your journey.",
+    },
+    {
+      id: 12,
+      question: "Can I use Tara-Vel offline?",
+      answer:
+        "No, Tara-Vel cannot be used offline as it requires internet connection to provide real-time vehicle tracking and updates.",
+    },
+    {
+      id: 13,
+      question: "Do I need to create an account to use Tara-Vel?",
+      answer:
+        "Yes, you need to create an account to access Tara-Vel's features and save your preferences.",
+    },
+    {
+      id: 14,
+      question: "Can I use the app without uploading an ID?",
+      answer:
+        "Yes, you can use all basic features of Tara-Vel without uploading an ID. However, uploading your Student, PWD, or Senior ID is only required if you want to access available discounts.",
     },
   ];
 
