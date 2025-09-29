@@ -48,17 +48,6 @@ export default function FeaturesSection() {
       }
     );
 
-    // Animate floating blobs
-    gsap.to('.floating-blob', {
-      y: -20,
-      x: 10,
-      rotation: 5,
-      duration: 4,
-      ease: 'sine.inOut',
-      stagger: 0.5,
-      repeat: -1,
-      yoyo: true
-    });
   });
 
   const features = [
@@ -120,10 +109,10 @@ export default function FeaturesSection() {
 
   return (
     <section id="features" className="relative py-20 overflow-hidden">
-      {/* Animated Background */}
+      {/* SVG Blob Shapes */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10">
         
-        {/* Floating SVG Blobs */}
+        {/* SVG Blob Shapes */}
         <svg className="absolute top-0 left-0 w-full h-full" viewBox="0 0 1200 800" fill="none">
           {/* Blue blob */}
           <path 

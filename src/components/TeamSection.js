@@ -71,9 +71,6 @@ export default function TeamSection() {
       role: 'UI/UX Designer',
       email: 'juniorlazarooo.jr@gmail.com',
       image: '/assets/member-pictures/jake.jpg',
-      color: 'text-green-600',
-      bgColor: 'bg-green-50',
-      borderColor: 'border-green-200'
     },
     {
       id: 2,
@@ -81,9 +78,6 @@ export default function TeamSection() {
       role: 'Web Developer',
       email: 'aggabaoarvy072004@gmail.com',
       image: '/assets/member-pictures/arvy.png',
-      color: 'text-blue-600',
-      bgColor: 'bg-blue-50',
-      borderColor: 'border-blue-200'
     },
     {
       id: 3,
@@ -91,9 +85,6 @@ export default function TeamSection() {
       role: 'Mobile Developer',
       email: 'jirehvestre25434@gmail.com',
       image: '/assets/member-pictures/jv.jpg',
-      color: 'text-purple-600',
-      bgColor: 'bg-purple-50',
-      borderColor: 'border-purple-200'
     },
     {
       id: 4,
@@ -101,9 +92,6 @@ export default function TeamSection() {
       role: 'Mobile Developer',
       email: 'carlobordoangelo@gmail.com',
       image: '/assets/member-pictures/carl.jpg',
-      color: 'text-orange-600',
-      bgColor: 'bg-orange-50',
-      borderColor: 'border-orange-200'
     },
     {
       id: 5,
@@ -111,9 +99,6 @@ export default function TeamSection() {
       role: 'Mobile Developer',
       email: 'abielparungao31@gmail.com',
       image: '/assets/member-pictures/abiel.jpg',
-      color: 'text-pink-600',
-      bgColor: 'bg-pink-50',
-      borderColor: 'border-pink-200'
     }
   ];
 
@@ -190,38 +175,43 @@ export default function TeamSection() {
         <div className="team-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6 lg:gap-8 mb-16 max-w-8xl mx-auto">
           {teamMembers.map((member) => (
             <div key={member.id} className="team-card group">
-              <div className={`card bg-base-100 shadow-lg hover:shadow-xl transition-all duration-300 h-full border ${member.borderColor} hover:border-opacity-50`}>
-                <div className="card-body p-4 sm:p-6 lg:p-8 text-center">
-                  {/* Profile Image */}
-                  <div className="relative mb-4 lg:mb-6">
-                    <div className={`w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 xl:w-32 xl:h-32 ${member.bgColor} rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
+              <div className={`card bg-base-100 shadow-lg hover:shadow-xl transition-all duration-300 h-full border border-blue-200 hover:border-opacity-50`}>
+                <div className="card-body p-6 text-center grid grid-rows-[auto_1fr_auto_auto] gap-4 h-full min-h-[320px]">
+                  {/* Row 1 - Picture */}
+                  <div className="flex items-center justify-center">
+                    <div className={`w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 bg-blue-50 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
                       <Image 
                         src={member.image} 
                         alt={member.name}
                         width={512}
                         height={512}
-                        className="profile-image w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 rounded-full object-cover border-2 border-base-100 shadow-md"
+                        className="profile-image w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 rounded-full object-cover border-2 border-base-100 shadow-md"
                       />
                     </div>
                   </div>
                   
-                  {/* Content */}
-                  <h3 className="text-sm sm:text-base lg:text-lg xl:text-xl font-bold text-base-content mb-2 lg:mb-3">
-                    {member.name}
-                  </h3>
-                  <p className={`text-xs sm:text-sm lg:text-base ${member.color} font-semibold mb-4 lg:mb-6`}>
-                    {member.role}
-                  </p>
+                  {/* Row 2-3 - Name (flexible space for long names) */}
+                  <div className="flex items-center justify-center py-2">
+                    <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-blue-950 leading-tight text-center">
+                      {member.name}
+                    </h3>
+                  </div>
                   
-                  {/* Email Contact */}
-                  <div className="mt-auto">
+                  {/* Row 4 - Role */}
+                  <div className="flex items-center justify-center">
+                    <div className="px-4 py-1 text-sm text-blue-900 font-medium bg-blue-100/50 rounded-full shadow-sm group-hover:bg-blue-200/50 transition-colors duration-300">
+                      {member.role}
+                    </div>
+                  </div>
+                  
+                  {/* Row 5 - Contact */}
+                  <div className="flex items-center justify-center pt-2 mt-5">
                     <a 
                       href={`mailto:${member.email}`}
-                      className={`btn btn-xs sm:btn-sm lg:btn-md btn-outline ${member.color.replace('text-', 'btn-')} hover:text-black transition-all duration-300 w-full`}
+                      className={`btn btn-sm lg:btn-md btn-outline text-blue-900 btn-blue-900 hover:text-white hover:bg-blue-950 transition-all duration-300 w-full max-w-[200px]`}
                     >
                       <i className="fas fa-envelope mr-2"></i>
-                      <span className="hidden sm:inline">Contact</span>
-                      <span className="sm:hidden">Email</span>
+                      <span>Contact</span>
                     </a>
                   </div>
                 </div>

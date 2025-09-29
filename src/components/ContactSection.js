@@ -52,17 +52,6 @@ export default function ContactSection() {
         }
       }
     );
-
-    // Animate floating elements
-    gsap.to('.floating-element', {
-      y: -20,
-      duration: 2,
-      ease: "power2.inOut",
-      yoyo: true,
-      repeat: -1,
-      stagger: 0.5
-    });
-
     // Animate contact icons
     gsap.fromTo('.contact-icon', 
       { 
@@ -83,47 +72,13 @@ export default function ContactSection() {
       }
     );
 
-    // Animate background blobs
-    gsap.to('.contact-blob', {
-      rotation: 360,
-      duration: 20,
-      ease: "none",
-      repeat: -1
-    });
-
-    gsap.to('.contact-blob-2', {
-      rotation: -360,
-      duration: 25,
-      ease: "none",
-      repeat: -1
-    });
-
-    // Add floating motion to blobs
-    gsap.to('.contact-blob', {
-      y: -30,
-      duration: 6,
-      ease: "sine.inOut",
-      yoyo: true,
-      repeat: -1,
-      stagger: 1
-    });
-
-    gsap.to('.contact-blob-2', {
-      y: 20,
-      duration: 8,
-      ease: "sine.inOut",
-      yoyo: true,
-      repeat: -1,
-      stagger: 1.5
-    });
   });
 
   return (
     <section id="contact" className="relative py-20 min-h-screen">
-      {/* Animated Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10">
         
-        {/* Animated SVG Blobs */}
+        {/* SVG Blob Shapes */}
         <svg className="absolute top-0 left-0 w-full h-full" viewBox="0 0 1200 800" fill="none">
           {/* Primary blob */}
           <path 
@@ -173,13 +128,6 @@ export default function ContactSection() {
             </linearGradient>
           </defs>
         </svg>
-
-        {/* Floating elements */}
-        <div className="floating-element absolute top-20 left-20 w-4 h-4 bg-primary/20 rounded-full"></div>
-        <div className="floating-element absolute top-40 right-32 w-6 h-6 bg-secondary/20 rounded-full"></div>
-        <div className="floating-element absolute bottom-40 left-32 w-3 h-3 bg-accent/30 rounded-full"></div>
-        <div className="floating-element absolute bottom-20 right-20 w-5 h-5 bg-primary/15 rounded-full"></div>
-        <div className="floating-element absolute top-1/2 left-1/4 w-2 h-2 bg-secondary/25 rounded-full"></div>
       </div>
 
       <div className="relative z-10 container mx-auto px-4">
