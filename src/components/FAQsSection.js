@@ -50,17 +50,6 @@ export default function FAQsSection() {
       }
     );
 
-    // Animate floating blobs
-    gsap.to(".floating-blob", {
-      y: -20,
-      x: 10,
-      rotation: 5,
-      duration: 8,
-      ease: "sine.inOut",
-      stagger: 1.5,
-      repeat: -1,
-      yoyo: true,
-    });
   });
 
   const faqs = [
@@ -153,9 +142,9 @@ export default function FAQsSection() {
 
   return (
     <section id="faq" className="relative py-20 overflow-hidden">
-      {/* Animated Background */}
+      {/* SVG Blob Shapes */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10">
-        {/* Floating SVG Blobs */}
+        {/* SVG Blob Shapes */}
         <svg
           className="absolute top-0 left-0 w-full h-full"
           viewBox="0 0 1200 800"

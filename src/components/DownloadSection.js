@@ -49,60 +49,23 @@ export default function DownloadSection() {
       }
     );
 
-    // Float animation for icons
-    gsap.to('.download-icon', {
-      y: -10,
-      duration: 2,
-      repeat: -1,
-      yoyo: true,
-      ease: 'sine.inOut',
-      stagger: 0.4
-    });
-
-    // Animate SVG blobs
-    gsap.to('.floating-blob', {
-      y: -15,
-      x: 8,
-      rotation: 3,
-      duration: 5,
-      ease: 'sine.inOut',
-      stagger: 0.6,
-      repeat: -1,
-      yoyo: true
-    });
+      // Float animation for icons
+      gsap.to('.download-icon', {
+        y: -10,
+        duration: 2,
+        repeat: -1,
+        yoyo: true,
+        ease: 'sine.inOut',
+        stagger: 0.4
+      });
   });
 
   return (
     <section id="download" className="relative min-h-screen overflow-hidden pt-24">
-      {/* Animated SVG Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10">
         
         {/* SVG Blob Shapes */}
-        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1200 800" fill="none">
-          {/* Blob 1 */}
-          <path
-            className="blob-1"
-            d="M300,200 C400,150 500,250 450,350 C400,450 300,400 200,350 C100,300 150,200 300,200Z"
-            fill="url(#gradient1)"
-            opacity="0.6"
-          />
-          
-          {/* Blob 2 */}
-          <path
-            className="blob-2"
-            d="M800,100 C900,80 1000,180 950,280 C900,380 800,350 700,280 C600,210 650,120 800,100Z"
-            fill="url(#gradient2)"
-            opacity="0.5"
-          />
-          
-          {/* Blob 3 */}
-          <path
-            className="blob-3"
-            d="M1000,500 C1100,450 1150,550 1100,650 C1050,750 950,700 900,650 C850,600 900,500 1000,500Z"
-            fill="url(#gradient3)"
-            opacity="0.4"
-          />
-          
+        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1200 800" fill="none">          
           {/* Gradients */}
           <defs>
             <linearGradient id="downloadGradient" x1="0%" y1="0%" x2="100%" y2="100%">
