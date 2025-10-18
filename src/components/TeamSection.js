@@ -84,21 +84,21 @@ export default function TeamSection() {
       name: 'Jirehvestre Domingo',
       role: 'Mobile Developer',
       email: 'jirehvestre25434@gmail.com',
-      image: '/assets/member-pictures/jv.jpg',
+      image: '/assets/member-pictures/jv.png',
     },
     {
       id: 4,
       name: 'Carl Angelo Obordo',
       role: 'Mobile Developer',
       email: 'carlobordoangelo@gmail.com',
-      image: '/assets/member-pictures/carl.jpg',
+      image: '/assets/member-pictures/carl.png',
     },
     {
       id: 5,
       name: 'Abiel Roj Parungao',
       role: 'Mobile Developer',
       email: 'abielparungao31@gmail.com',
-      image: '/assets/member-pictures/abiel.jpg',
+      image: '/assets/member-pictures/Abiel.png',
     }
   ];
 
