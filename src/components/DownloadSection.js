@@ -31,24 +31,6 @@ export default function DownloadSection() {
       }
     );
 
-    // Animate QR code
-    gsap.fromTo('.qr-code',
-      {
-        scale: 0,
-        rotation: -180
-      },
-      {
-        scale: 1,
-        rotation: 0,
-        duration: 1.5,
-        ease: 'elastic.out(1, 0.75)',
-        scrollTrigger: {
-          trigger: '.qr-code',
-          start: 'top 85%'
-        }
-      }
-    );
-
       // Float animation for icons
       gsap.to('.download-icon', {
         y: -10,
@@ -76,10 +58,6 @@ export default function DownloadSection() {
               <stop offset="0%" stopColor="#10B981" stopOpacity="0.08"/>
               <stop offset="100%" stopColor="#059669" stopOpacity="0.04"/>
             </linearGradient>
-            <linearGradient id="qrGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#8B5CF6" stopOpacity="0.08"/>
-              <stop offset="100%" stopColor="#7C3AED" stopOpacity="0.04"/>
-            </linearGradient>
           </defs>
         </svg>
         
@@ -102,21 +80,21 @@ export default function DownloadSection() {
         </div>
 
         {/* Download Grid */}
-        <div className="download-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="download-grid grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           
-          {/* Android Download Card */}
+          {/* Android Commuters Download Card */}
           <div className="download-card card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 group border-2 border-success/30">
             <div className="card-body p-8 text-center">
               <div className="w-20 h-20 border-2 border-success/30 rounded-2xl flex items-center justify-center mx-auto mb-6 download-icon group-hover:scale-110 transition-transform">
                 <i className="fa-brands fa-android" style={{color: '#63E6BE', fontSize: '3rem'}}></i>
               </div>
-              <h3 className="text-2xl font-bold text-base-content mb-4">Android</h3>
+              <h3 className="text-2xl font-bold text-base-content mb-4">Android - Commuters</h3>
               <p className="text-base-content/70 mb-6">
-                Coming soon to Google Play Store. Get notified when it&apos;s available.
+                Download the Tara-Vel app for commuters. Get early access to hassle-free transportation in Cagayan Valley.
               </p>
               <div className="space-y-3">
                 <a
-                  href="https://youtu.be/dQw4w9WgXcQ?list=RDdQw4w9WgXcQ"
+                  href="#"
                   className="btn btn-lg w-full flex items-center justify-center border border-success text-success bg-transparent hover:bg-success hover:text-white transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -129,62 +107,27 @@ export default function DownloadSection() {
             </div>
           </div>
 
-          {/* iOS Download Card */}
+          {/* Android Organization App Download Card */}
           <div className="download-card card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 group border-2 border-primary/30">
             <div className="card-body p-8 text-center">
               <div className="w-20 h-20 border-2 border-primary/30 rounded-2xl flex items-center justify-center mx-auto mb-6 download-icon group-hover:scale-110 transition-transform">
-                <i className="fa-brands fa-apple" style={{color: '#9f9d9d', fontSize: '3rem'}}></i>
+                <i className="fa-brands fa-android" style={{color: '#3B82F6', fontSize: '3rem'}}></i>
               </div>
-              <h3 className="text-2xl font-bold text-base-content mb-4">iOS</h3>
+              <h3 className="text-2xl font-bold text-base-content mb-4">Android - Organization App</h3>
               <p className="text-base-content/70 mb-6">
-                Currently in development. Stay tuned for App Store release.
+                Download the Tara-Vel Organization App. Manage your transportation services and connect with commuters.
               </p>
               <div className="space-y-3">
-                <button className="btn btn-primary btn-lg w-full" disabled>
-                  <i className="fa-brands fa-app-store mr-2"></i>
-                  Coming Soon
-                </button>
-                <div className="badge badge-primary badge-outline">In Development</div>
-              </div>
-            </div>
-          </div>
-
-          {/* QR Code Card */}
-          <div className="download-card card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 group border-2 border-accent/30 md:col-span-2 lg:col-span-1">
-            <div className="card-body p-8 text-center">
-              <div className="w-20 h-20 border-2 border-accent/30 rounded-2xl flex items-center justify-center mx-auto mb-6 download-icon group-hover:scale-110 transition-transform">
-                <i className="fa-sharp fa-solid fa-qrcode" style={{fontSize: '3rem'}}></i>
-              </div>
-              <h3 className="text-2xl font-bold text-base-content mb-4">Quick Access</h3>
-              <p className="text-base-content/70 mb-6">
-                Scan QR code for instant access to download the app on android.
-              </p>
-              
-              {/* QR Code Placeholder */}
-              <div className="qr-code bg-base-200 border-2 border-accent/30 rounded-2xl p-4 mx-auto mb-4 w-32 h-32 flex items-center justify-center">
-                <div className="grid grid-cols-4 gap-1 w-24 h-24">
-                  {/* QR Code Pattern Placeholder */}
-                  <div className="bg-base-content rounded-sm"></div>
-                  <div className="bg-base-300 rounded-sm"></div>
-                  <div className="bg-base-content rounded-sm"></div>
-                  <div className="bg-base-300 rounded-sm"></div>
-                  <div className="bg-base-300 rounded-sm"></div>
-                  <div className="bg-base-content rounded-sm"></div>
-                  <div className="bg-base-300 rounded-sm"></div>
-                  <div className="bg-base-content rounded-sm"></div>
-                  <div className="bg-base-content rounded-sm"></div>
-                  <div className="bg-base-300 rounded-sm"></div>
-                  <div className="bg-base-content rounded-sm"></div>
-                  <div className="bg-base-300 rounded-sm"></div>
-                  <div className="bg-base-300 rounded-sm"></div>
-                  <div className="bg-base-content rounded-sm"></div>
-                  <div className="bg-base-300 rounded-sm"></div>
-                  <div className="bg-base-content rounded-sm"></div>
-                </div>
-              </div>
-              
-              <div className="text-xs text-base-content/50">
-                TODO: Replace with actual QR code
+                <a
+                  href="#"
+                  className="btn btn-lg w-full flex items-center justify-center border border-primary text-primary bg-transparent hover:bg-primary hover:text-white transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Download APK
+                  <i className="fas fa-download ml-2"></i>
+                </a>
+                <div className="badge badge-primary badge-outline">Beta Version</div>
               </div>
             </div>
           </div>
@@ -194,3 +137,5 @@ export default function DownloadSection() {
     </section>
   );
 }
+
+
