@@ -137,7 +137,7 @@ export default function ContactSection() {
             Get In Touch
           </h2>
           <p className="text-lg md:text-xl text-base-content/70 max-w-3xl mx-auto leading-relaxed">
-            Have questions about Tara-Vel? We&apos;d love to hear from you! 
+            Have questions about Tara-vel? We&apos;d love to hear from you! 
             Connect with us through any of these channels.
           </p>
         </div>
@@ -207,7 +207,7 @@ export default function ContactSection() {
                   <div className="qr-code bg-base-100 border-4 border-primary/30 rounded-3xl p-6 w-48 h-48 lg:w-64 lg:h-64 flex items-center justify-center shadow-xl">
                     <Image 
                       src="/taravel-fb-page.svg" 
-                      alt="Tara-Vel Facebook Page QR Code" 
+                      alt="Tara-vel Facebook Page QR Code" 
                       width={256}
                       height={256}
                       className="w-full h-full object-contain"
@@ -224,7 +224,7 @@ export default function ContactSection() {
                     Scan to Follow Our Journey
                   </h3>
                   <p className="text-base-content/80 mb-6 text-lg">
-                    Scan this QR code to instantly follow our Facebook page and stay updated with Tara-Vel&apos;s latest developments!
+                    Scan this QR code to instantly follow our Facebook page and stay updated with Tara-vel&apos;s latest developments!
                   </p>
                   <a 
                     href="https://www.facebook.com/share/17DB8fhPL9/" 

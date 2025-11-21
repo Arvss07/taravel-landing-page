@@ -63,15 +63,15 @@ export default function Footer() {
              <div className="flex items-center space-x-4">
                <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center">
                  <Image 
-                   src="/taravel.svg" 
-                   alt="Tara-Vel Logo" 
+                   src="/taravel.png" 
+                   alt="Tara-vel Logo" 
                    width={32} 
                    height={32}
                    className="w-8 h-8"
                  />
                </div>
                <div>
-                 <h3 className="text-xl font-bold text-primary">Tara-Vel</h3>
+                 <h3 className="text-xl font-bold text-primary">Tara-vel</h3>
                  <p className="text-base-content/70 text-sm">
                    Transforming public transportation in Cagayan Valley making your commute hassle-free.
                  </p>
@@ -105,7 +105,7 @@ export default function Footer() {
              {/* Copyright */}
              <div className="text-center lg:text-right">
                <p className="text-base-content/70 text-sm">
-                 © 2025 Tara-Vel. All rights reserved. Made with ❤️ for Cagayan Valley commuters.
+                 © 2025 Tara-vel. All rights reserved. Made with ❤️ for Cagayan Valley commuters.
                </p>
              </div>
 

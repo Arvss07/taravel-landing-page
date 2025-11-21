@@ -195,7 +195,7 @@ export default function TeamSection() {
             Meet Our Team
           </h2>
           <p className="text-clamp-lg text-base-content/70 max-w-3xl mx-auto leading-relaxed">
-            The passionate developers behind Tara-Vel, working together to
+            The passionate developers behind Tara-vel, working together to
             revolutionize transportation in Cagayan Valley.
           </p>
         </div>
