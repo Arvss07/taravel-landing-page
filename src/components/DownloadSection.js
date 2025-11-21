@@ -1,5 +1,7 @@
 'use client';
 
+import { useState } from 'react';
+import Image from 'next/image';
 import { useGSAP } from '@gsap/react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -7,8 +9,40 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function DownloadSection() {
+  const [commuterSource, setCommuterSource] = useState('vercel');
+  const [driverSource, setDriverSource] = useState('vercel');
+
+  // Download URLs
+  const downloadUrls = {
+    commuter: {
+      vercel: 'https://piqohdefsahpbybs.public.blob.vercel-storage.com/Tara-vel_release_v1.apk',
+      mega: 'https://mega.nz/file/3A8wXbwL#-kM08QbgcYoQeStGBcKuUNTddrAnaulP_vGNYgBN8dI'
+    },
+    driver: {
+      vercel: 'https://piqohdefsahpbybs.public.blob.vercel-storage.com/Tara-vel-driver_release_v1.apk',
+      mega: 'https://mega.nz/file/WEFx0KqY#ZNT0HuZXMtxVF4wmu3SHSKng1PEJRrS5JpLl2VsU3YM'
+    }
+  };
   // GSAP animations
   useGSAP(() => {
+    // Animate section header
+    gsap.fromTo('.download-header', 
+      { 
+        y: 50, 
+        opacity: 0 
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: '#download',
+          start: 'top 80%'
+        }
+      }
+    );
+
     // Animate download cards
     gsap.fromTo('.download-card', 
       { 
@@ -31,15 +65,25 @@ export default function DownloadSection() {
       }
     );
 
-      // Float animation for icons
-      gsap.to('.download-icon', {
-        y: -10,
-        duration: 2,
-        repeat: -1,
-        yoyo: true,
-        ease: 'sine.inOut',
-        stagger: 0.4
-      });
+    // Float animation for icons
+    gsap.to('.download-icon', {
+      y: -10,
+      duration: 2,
+      repeat: -1,
+      yoyo: true,
+      ease: 'sine.inOut',
+      stagger: 0.4
+    });
+
+    // Pulse animation for download buttons
+    gsap.to('.download-btn', {
+      scale: 1.02,
+      duration: 2,
+      repeat: -1,
+      yoyo: true,
+      ease: 'sine.inOut',
+      stagger: 0.5
+    });
   });
 
   return (
@@ -69,13 +113,19 @@ export default function DownloadSection() {
 
       <div className="relative z-10 container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 download-header">
+          <div className="inline-block mb-6">
+            <div className="badge badge-success badge-lg gap-2 px-5 py-3">
+              <i className="fas fa-check-circle text-white"></i>
+              <span className="font-semibold text-white">Ready to Download</span>
+            </div>
+          </div>
           <h2 className="text-4xl md:text-6xl font-bold mb-6 text-primary">
-            Download Tara-Vel
+            Download Tara-vel
           </h2>
           <p className="text-lg md:text-xl text-base-content/70 max-w-3xl mx-auto leading-relaxed">
-            Get early access to the future of transportation in Cagayan Valley. 
-            Join our beta testing community and be among the first to experience hassle-free travel.
+            Experience the future of transportation in Cagayan Valley. 
+            Download now and start your hassle-free travel journey today.
           </p>
         </div>
 
@@ -90,44 +140,142 @@ export default function DownloadSection() {
               </div>
               <h3 className="text-2xl font-bold text-base-content mb-4">Android - Commuters</h3>
               <p className="text-base-content/70 mb-6">
-                Download the Tara-Vel app for commuters. Get early access to hassle-free transportation in Cagayan Valley.
+                Perfect for passengers. Book rides, track buses, and enjoy seamless transportation across Cagayan Valley.
               </p>
+              
+              {/* Download Source Selector */}
+              <div className="mb-6">
+                <label className="text-sm font-semibold text-base-content/70 mb-3 block">
+                  Choose Download Source:
+                </label>
+                <div className="flex gap-2 w-full">
+                  <button
+                    className={`btn flex-1 ${commuterSource === 'vercel' ? 'btn-primary text-white' : 'btn-outline'}`}
+                    onClick={() => setCommuterSource('vercel')}
+                  >
+                    <i className={`fas fa-cloud mr-2 ${commuterSource === 'vercel' ? 'text-white' : ''}`}></i>
+                    Vercel
+                  </button>
+                  <button
+                    className={`btn flex-1 ${commuterSource === 'mega' ? 'bg-error/20 text-error border-error/40 hover:bg-error/30' : 'btn-outline'}`}
+                    onClick={() => setCommuterSource('mega')}
+                  >
+                    <Image 
+                      src="/assets/mega.png" 
+                      alt="MEGA" 
+                      width={20} 
+                      height={20} 
+                      className="mr-2"
+                    />
+                    MEGA
+                  </button>
+                </div>
+              </div>
+
               <div className="space-y-3">
                 <a
-                  href="#"
-                  className="btn btn-lg w-full flex items-center justify-center border border-success text-success bg-transparent hover:bg-success hover:text-white transition-colors"
+                  href={downloadUrls.commuter[commuterSource]}
+                  className="btn btn-lg w-full flex items-center justify-center border border-success text-success bg-transparent hover:bg-success hover:text-white transition-colors download-btn"
                   target="_blank"
                   rel="noopener noreferrer"
+                  download={commuterSource === 'vercel'}
                 >
-                  Download APK
+                  <span>Download APK</span>
                   <i className="fas fa-download ml-2"></i>
                 </a>
-                <div className="badge badge-success badge-outline">Beta Version</div>
+                <div className="flex items-center justify-center gap-2 flex-wrap">
+                  <div className="badge badge-success badge-outline">
+                    <i className="fas fa-check mr-1"></i>
+                    Version 1.0
+                  </div>
+                  <div className="badge badge-ghost text-xs">
+                    {commuterSource === 'vercel' ? (
+                      <>
+                        <i className="fas fa-bolt mr-1"></i>
+                        Fast CDN
+                      </>
+                    ) : (
+                      <>
+                        <i className="fas fa-cloud-download-alt mr-1"></i>
+                        Alternative
+                      </>
+                    )}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Android Organization App Download Card */}
+          {/* Android Driver App Download Card */}
           <div className="download-card card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 group border-2 border-primary/30">
             <div className="card-body p-8 text-center">
               <div className="w-20 h-20 border-2 border-primary/30 rounded-2xl flex items-center justify-center mx-auto mb-6 download-icon group-hover:scale-110 transition-transform">
                 <i className="fa-brands fa-android" style={{color: '#3B82F6', fontSize: '3rem'}}></i>
               </div>
-              <h3 className="text-2xl font-bold text-base-content mb-4">Android - Organization App</h3>
+              <h3 className="text-2xl font-bold text-base-content mb-4">Android - Driver</h3>
               <p className="text-base-content/70 mb-6">
-                Download the Tara-Vel Organization App. Manage your transportation services and connect with commuters.
+                Built for drivers and operators. Manage routes, accept bookings, and grow your transportation business.
               </p>
+              
+              {/* Download Source Selector */}
+              <div className="mb-6">
+                <label className="text-sm font-semibold text-base-content/70 mb-3 block">
+                  Choose Download Source:
+                </label>
+                <div className="flex gap-2 w-full">
+                  <button
+                    className={`btn flex-1 ${driverSource === 'vercel' ? 'btn-primary text-white' : 'btn-outline'}`}
+                    onClick={() => setDriverSource('vercel')}
+                  >
+                    <i className={`fas fa-cloud mr-2 ${driverSource === 'vercel' ? 'text-white' : ''}`}></i>
+                    Vercel
+                  </button>
+                  <button
+                    className={`btn flex-1 ${driverSource === 'mega' ? 'bg-error/20 text-error border-error/40 hover:bg-error/30' : 'btn-outline'}`}
+                    onClick={() => setDriverSource('mega')}
+                  >
+                    <Image 
+                      src="/assets/mega.png" 
+                      alt="MEGA" 
+                      width={20} 
+                      height={20} 
+                      className="mr-2"
+                    />
+                    MEGA
+                  </button>
+                </div>
+              </div>
+
               <div className="space-y-3">
                 <a
-                  href="#"
-                  className="btn btn-lg w-full flex items-center justify-center border border-primary text-primary bg-transparent hover:bg-primary hover:text-white transition-colors"
+                  href={downloadUrls.driver[driverSource]}
+                  className="btn btn-lg w-full flex items-center justify-center border border-primary text-primary bg-transparent hover:bg-primary hover:text-white transition-colors download-btn"
                   target="_blank"
                   rel="noopener noreferrer"
+                  download={driverSource === 'vercel'}
                 >
-                  Download APK
+                  <span>Download APK</span>
                   <i className="fas fa-download ml-2"></i>
                 </a>
-                <div className="badge badge-primary badge-outline">Beta Version</div>
+                <div className="flex items-center justify-center gap-2 flex-wrap">
+                  <div className="badge badge-primary badge-outline">
+                    <i className="fas fa-check mr-1"></i>
+                    Version 1.0
+                  </div>
+                  <div className="badge badge-ghost text-xs">
+                    {driverSource === 'vercel' ? (
+                      <>
+                        <i className="fas fa-bolt mr-1"></i>
+                        Fast CDN
+                      </>
+                    ) : (
+                      <>
+                        <i className="fas fa-cloud-download-alt mr-1"></i>
+                        Alternative
+                      </>
+                    )}
+                  </div>
+                </div>
               </div>
             </div>
           </div>

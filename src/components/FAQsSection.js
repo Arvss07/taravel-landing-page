@@ -55,21 +55,21 @@ export default function FAQsSection() {
   const faqs = [
     {
       id: 1,
-      question: "What is Tara-Vel and how does it work?",
+      question: "What is Tara-vel and how does it work?",
       answer:
-        "Tara-Vel is a mobile app that makes public transportation easier for commuters in Cagayan. It provides real-time updates, helpful tools, and accessible features to make your daily travel more convenient and reliable. Whether you're a student, senior, or regular commuter, Tara-Vel helps you travel with confidence.",
+        "Tara-vel is a mobile app that makes public transportation easier for commuters in Cagayan. It provides real-time updates, helpful tools, and accessible features to make your daily travel more convenient and reliable. Whether you're a student, senior, or regular commuter, Tara-vel helps you travel with confidence.",
     },
     {
       id: 2,
-      question: "Is Tara-Vel completely free to use?",
+      question: "Is Tara-vel completely free to use?",
       answer:
-        "Yes, Tara-Vel is completely free to use with no subscriptions, hidden fees, or charges. You get full access to all features without any cost.",
+        "Yes, Tara-vel is completely free to use with no subscriptions, hidden fees, or charges. You get full access to all features without any cost.",
     },
     {
       id: 3,
       question: "How accurate is the real-time GPS tracking?",
       answer:
-        "Tara-Vel's real-time GPS tracking is accurate within 5 to 10 meters, though accuracy may vary based on your device quality, signal strength, and surrounding conditions.",
+        "Tara-vel's real-time GPS tracking is accurate within 5 to 10 meters, though accuracy may vary based on your device quality, signal strength, and surrounding conditions.",
     },
     {
       id: 4,
@@ -80,33 +80,33 @@ export default function FAQsSection() {
     },
     {
       id: 5,
-      question: "What types of vehicles are tracked on Tara-Vel?",
+      question: "What types of vehicles are tracked on Tara-vel?",
       answer:
-        "Tara-Vel tracks Public Utility Vehicles (PUVs) including vans and buses, helping you monitor these common forms of public transportation.",
+        "Tara-vel tracks Public Utility Vehicles (PUVs) including vans and buses, helping you monitor these common forms of public transportation.",
     },
     {
       id: 6,
-      question: "How can I contact the Tara-Vel team for support?",
+      question: "How can I contact the Tara-vel team for support?",
       answer:
-        "You can reach our support team by messaging us on Facebook (Tara-Vel), calling 0905-232-7405, or emailing taravelofficial.ph@gmail.com.",
+        "You can reach our support team by messaging us on Facebook (Tara-vel), calling 0905-232-7405, or emailing taravelofficial.ph@gmail.com.",
     },
     {
       id: 7,
-      question: "Do I need internet connection to use Tara-Vel?",
+      question: "Do I need internet connection to use Tara-vel?",
       answer:
-        "Yes, Tara-Vel requires an active internet connection to provide real-time vehicle tracking, updates, and all app features.",
+        "Yes, Tara-vel requires an active internet connection to provide real-time vehicle tracking, updates, and all app features.",
     },
     {
       id: 8,
-      question: "Why does Tara-Vel need location permission?",
+      question: "Why does Tara-vel need location permission?",
       answer:
-        "Tara-Vel needs access to your location to show you nearby vehicles and provide accurate updates for your journey.",
+        "Tara-vel needs access to your location to show you nearby vehicles and provide accurate updates for your journey.",
     },
     {
       id: 9,
       question: "My GPS isn't working. How do I fix it?",
       answer:
-        "First, make sure location/GPS is turned on in your phone's settings. Then go to your app settings, find Tara-Vel, and allow location permissions. If it's still not working, check that you have good signal reception and try restarting the app.",
+        "First, make sure location/GPS is turned on in your phone's settings. Then go to your app settings, find Tara-vel, and allow location permissions. If it's still not working, check that you have good signal reception and try restarting the app.",
     },
     {
       id: 10,
@@ -116,27 +116,27 @@ export default function FAQsSection() {
     },
     {
       id: 11,
-      question: "Does Tara-Vel track my location?",
+      question: "Does Tara-vel track my location?",
       answer:
-        "Yes, Tara-Vel uses your location but only while you're actively using the app. This helps provide accurate updates for your journey.",
+        "Yes, Tara-vel uses your location but only while you're actively using the app. This helps provide accurate updates for your journey.",
     },
     {
       id: 12,
-      question: "Can I use Tara-Vel offline?",
+      question: "Can I use Tara-vel offline?",
       answer:
-        "No, Tara-Vel cannot be used offline as it requires internet connection to provide real-time vehicle tracking and updates.",
+        "No, Tara-vel cannot be used offline as it requires internet connection to provide real-time vehicle tracking and updates.",
     },
     {
       id: 13,
-      question: "Do I need to create an account to use Tara-Vel?",
+      question: "Do I need to create an account to use Tara-vel?",
       answer:
-        "Yes, you need to create an account to access Tara-Vel's features and save your preferences.",
+        "Yes, you need to create an account to access Tara-vel's features and save your preferences.",
     },
     {
       id: 14,
       question: "Can I use the app without uploading an ID?",
       answer:
-        "Yes, you can use all basic features of Tara-Vel without uploading an ID. However, uploading your Student, PWD, or Senior ID is only required if you want to access available discounts.",
+        "Yes, you can use all basic features of Tara-vel without uploading an ID. However, uploading your Student, PWD, or Senior ID is only required if you want to access available discounts.",
     },
   ];
 
@@ -232,7 +232,7 @@ export default function FAQsSection() {
             Frequently Asked Questions
           </h2>
           <p className="text-clamp-lg text-base-content/70 max-w-3xl mx-auto leading-relaxed">
-            Got questions about Tara-Vel? Find answers to the most common
+            Got questions about Tara-vel? Find answers to the most common
             questions from our community of Cagayan Valley commuters.
           </p>
         </div>

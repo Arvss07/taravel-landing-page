@@ -13,6 +13,7 @@ export default function Navigation() {
     { id: 'hero', label: 'Home' },
     { id: 'about', label: 'About' },
     { id: 'features', label: 'Features' },
+    { id: 'guide', label: 'How to Use' },
     { id: 'download', label: 'Download' },
     { id: 'team', label: 'Team' },
     { id: 'contact', label: 'Contact' },
@@ -108,13 +109,13 @@ export default function Navigation() {
             style={{ boxShadow: 'none' }}
           >
             <Image
-              src="/taravel.svg"
-              alt="Tara-Vel Logo"
+              src="/taravel.png"
+              alt="Tara-vel Logo"
               width={32}
               height={32}
               className="w-8 h-8"
             />
-            <span className="hidden sm:inline">Tara-Vel</span>
+            <span className="hidden sm:inline">Tara-vel</span>
           </div>
         </div>
 
@@ -166,13 +167,13 @@ export default function Navigation() {
             <div className="flex items-center justify-between p-6 border-b border-base-300">
               <div className="flex items-center gap-3">
                 <Image
-                  src="/taravel.svg"
-                  alt="Tara-Vel Logo"
+                  src="/taravel.png"
+                  alt="Tara-vel Logo"
                   width={32}
                   height={32}
                   className="w-8 h-8"
                 />
-                <span className="text-xl font-bold text-primary">Tara-Vel</span>
+                <span className="text-xl font-bold text-primary">Tara-vel</span>
               </div>
               
               {/* Close Button */}

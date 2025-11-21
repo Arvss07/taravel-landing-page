@@ -188,52 +188,58 @@ export default function HeroSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen">
           {/* Left Side - Text Content */}
           <div className="text-center lg:text-left">
+            {/* Badge */}
+            <div className="flex items-center justify-center lg:justify-start gap-3 mb-6">
+              <div className="badge badge-success badge-lg gap-2 px-4 py-3 animate-pulse">
+                <i className="fas fa-check-circle text-white"></i>
+                <span className="font-bold text-white">AVAILABLE NOW</span>
+              </div>
+              <div className="badge badge-outline badge-lg">
+                <span className="text-xs">Version 1.0</span>
+              </div>
+            </div>
+
             <h1 className="text-5xl md:text-8xl font-bold mb-6 text-primary">
-              Tara-Vel
+              Tara-vel
             </h1>
-            <p className="text-xl md:text-2xl mb-6 text-base-content/80">
+            <p className="text-xl md:text-2xl mb-4 text-base-content/80">
               Hassle free on a traveling spree
             </p>
-            <p className="text-lg mb-8 text-base-content/60 max-w-lg mx-auto lg:mx-0">
+            <p className="text-lg mb-6 text-base-content/60 max-w-lg mx-auto lg:mx-0">
               Your Smart Public Transportation Companion for Cagayan Valley
             </p>
 
-            {/* App Store Badges */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              {/* TODO: Replace with actual store links when available */}
-              <div className="btn btn-outline btn-lg cursor-not-allowed opacity-60 h-auto">
-                <div className="flex items-center gap-3">
-                  {/* Google Play Icon */}
-                  <svg
-                    className="w-8 h-8"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                  >
-                    <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
-                  </svg>
-                  <div className="text-left">
-                    <div className="text-sm font-semibold">Google Play</div>
-                    <div className="text-xs opacity-70">Coming Soon</div>
-                  </div>
+            {/* Alpha Tester Invitation */}
+            <div className="bg-primary/10 border border-primary/30 rounded-2xl p-4 mb-8 max-w-lg mx-auto lg:mx-0">
+              <div className="flex items-start gap-3">
+                <i className="fas fa-sparkles text-accent text-xl mt-1"></i>
+                <div className="text-left">
+                  <p className="font-semibold text-base-content mb-1">
+                    Want to try Tara-vel first?
+                  </p>
+                  <p className="text-sm text-base-content/70">
+                    Secure your spot as an early tester and help shape the #1 public transport app in Cagayan Valley!
+                  </p>
                 </div>
               </div>
+            </div>
 
-              <div className="btn btn-outline btn-lg cursor-not-allowed opacity-60 h-auto">
-                <div className="flex items-center gap-3">
-                  {/* Apple App Store Icon */}
-                  <svg
-                    className="w-8 h-8"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                  >
-                    <path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.19 17.41,12.63C17.44,15.6 20.06,16.66 20.09,16.67C20.06,16.74 19.67,18.11 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.46 12.36,4.26 13,3.5Z" />
-                  </svg>
-                  <div className="text-left">
-                    <div className="text-sm font-semibold">App Store</div>
-                    <div className="text-xs opacity-70">Coming Soon</div>
-                  </div>
-                </div>
-              </div>
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-6">
+              <a
+                href="#download"
+                className="btn btn-primary btn-lg group px-8 py-4"
+              >
+                <span className="text-lg font-semibold text-white">Download Now</span>
+                <i className="fas fa-arrow-down ml-2 group-hover:translate-y-1 transition-transform text-white"></i>
+              </a>
+              <a
+                href="#features"
+                className="btn btn-outline btn-lg"
+              >
+                <span>Learn More</span>
+                <i className="fas fa-info-circle ml-2"></i>
+              </a>
             </div>
           </div>
 
@@ -249,7 +255,7 @@ export default function HeroSection() {
                 <div className="relative bg-gradient-to-b from-neutral-800 to-neutral-900 rounded-[3rem] p-4 shadow-2xl">
                   {/* Screen */}
                   <div className="bg-base-100 rounded-[2.5rem] overflow-hidden relative">
-                    {/* TODO: Replace with actual Tara-Vel app interface from SVG */}
+                    {/* TODO: Replace with actual Tara-vel app interface from SVG */}
                     <div
                       className="relative"
                       style={{
@@ -259,7 +265,7 @@ export default function HeroSection() {
                     >
                       <Image
                         src="/mockup-page-only.svg"
-                        alt="Tara-Vel App Interface"
+                        alt="Tara-vel App Interface"
                         fill
                         className="object-cover"
                         priority

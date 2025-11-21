@@ -186,7 +186,7 @@ export default function FeaturesSection() {
             Key Features
           </h2>
           <p className="text-clamp-xl text-base-content/70 max-w-3xl mx-auto leading-relaxed">
-            Discover the powerful features that make Tara-Vel the ultimate public transportation companion for Cagayan Valley commuters.
+            Discover the powerful features that make Tara-vel the ultimate public transportation companion for Cagayan Valley commuters.
           </p>
         </div>
 

@@ -115,7 +115,7 @@ export default function ProblemSolutionSection() {
           </h2>
           <p className="text-xl text-base-content/70 max-w-3xl mx-auto">
             Our market research reveals significant challenges that commuters face daily. 
-            Tara-Vel was created to solve these real problems.
+            Tara-vel was created to solve these real problems.
           </p>
         </div>
 
@@ -221,7 +221,7 @@ export default function ProblemSolutionSection() {
                 </div>
 
                 <div className="mb-4">
-                  <h4 className="font-bold text-primary mb-2">What is Tara-Vel?</h4>
+                  <h4 className="font-bold text-primary mb-2">What is Tara-vel?</h4>
                   <p className="text-base-content/80 text-sm leading-relaxed">
                     A mobile app designed to ease public transportation in Cagayan Valley with real-time insights and inclusive features.
                   </p>
@@ -261,11 +261,11 @@ export default function ProblemSolutionSection() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
-                  <h3 className="text-xl font-bold text-primary">Why Tara-Vel?</h3>
+                  <h3 className="text-xl font-bold text-primary">Why Tara-vel?</h3>
                 </div>
 
                 <p className="text-base-content/80 text-sm leading-relaxed">
-                  Commuters face uncertainty with missed rides, unclear routes, and overcrowded vehicles. Tara-Vel bridges that gap, providing reliable information and inclusive tools tailored to Tuguegarao&apos;s commuting public.
+                  Commuters face uncertainty with missed rides, unclear routes, and overcrowded vehicles. Tara-vel bridges that gap, providing reliable information and inclusive tools tailored to Tuguegarao&apos;s commuting public.
                 </p>
 
                 <div className="mt-4">
