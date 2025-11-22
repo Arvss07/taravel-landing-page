@@ -72,7 +72,7 @@ export default function CommuterGuide() {
       title: "Track Vehicle & ETA",
       description:
         "After entering passenger count, the map tracks the selected vehicle and shows the estimated arrival time at your location.",
-      image: "/assets/guides/Tara-Vel_s7.jpg",
+      image: "/assets/guides/Tara-Vel_s8.jpg",
     },
     {
       id: 9,
@@ -80,6 +80,13 @@ export default function CommuterGuide() {
       description:
         "Tap the arrow icon to follow the vehicle on the map. Tap the red button to unselect the vehicle and choose a different one.",
       image: "/assets/guides/Tara-Vel_s8.jpg",
+    },
+    {
+      id: 10,
+      title: "View Selected Vehicle Details",
+      description:
+        "Tap the eye icon to view the details of the selected vehicle including the destination, passenger count, and waiting passengers",
+      image: "/assets/guides/Tara-Vel_s9.jpg",
     },
   ];
 

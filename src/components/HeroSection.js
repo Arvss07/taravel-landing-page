@@ -195,7 +195,7 @@ export default function HeroSection() {
                 <span className="font-bold text-white">AVAILABLE NOW</span>
               </div>
               <div className="badge badge-outline badge-lg">
-                <span className="text-xs">Version 1.0</span>
+                <span className="text-xs">Version 2.0</span>
               </div>
             </div>
 

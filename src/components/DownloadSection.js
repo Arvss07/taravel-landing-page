@@ -26,8 +26,8 @@ export default function DownloadSection() {
   // Download URLs
   const downloadUrls = {
     commuter: {
-      vercel: 'https://piqohdefsahpbybs.public.blob.vercel-storage.com/Tara-vel_release_v1.apk',
-      mega: 'https://mega.nz/file/3A8wXbwL#-kM08QbgcYoQeStGBcKuUNTddrAnaulP_vGNYgBN8dI'
+      vercel: 'https://piqohdefsahpbybs.public.blob.vercel-storage.com/Tara-Vel-release_v2.apk',
+      mega: 'https://mega.nz/file/HYtyBaTY#qhQH7AUPVcuYAPottIv0LcAWg9cdhJ4m58bTB-1k7kY'
     },
     driver: {
       vercel: 'https://piqohdefsahpbybs.public.blob.vercel-storage.com/Tara-vel-driver_release_v1.apk',
