@@ -289,7 +289,7 @@ export default function DownloadSection() {
               </div>
               <h3 className="text-2xl font-bold text-base-content mb-4">Android - Driver</h3>
               <p className="text-base-content/70 mb-6">
-                Built for drivers and operators. Manage routes, accept bookings, and grow your transportation business.
+                Built for drivers and operators. Manage Routes, See Passenger Waiting, and More.
               </p>
               
               {/* Download Source Selector */}
