@@ -208,7 +208,7 @@ export default function DownloadSection() {
               </div>
               <h3 className="text-2xl font-bold text-base-content mb-4">Android - Commuters</h3>
               <p className="text-base-content/70 mb-6">
-                Perfect for passengers. Book rides, track buses, and enjoy seamless transportation across Cagayan Valley.
+                Perfect for passengers, the application enables users to track vans and buses in real-time and utilize the ping feature to signal drivers for a pickup within the service area.
               </p>
               
               {/* Download Source Selector */}
@@ -289,7 +289,7 @@ export default function DownloadSection() {
               </div>
               <h3 className="text-2xl font-bold text-base-content mb-4">Android - Driver</h3>
               <p className="text-base-content/70 mb-6">
-                Built for drivers and operators. Manage Routes, See Passenger Waiting, and More.
+                Built for drivers and operators, the system facilitates trip optimization by displaying current vehicle passenger counts and pinpointing the location of commuters actively waiting on the map.
               </p>
               
               {/* Download Source Selector */}
