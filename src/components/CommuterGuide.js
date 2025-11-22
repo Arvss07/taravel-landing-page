@@ -1,8 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -10,6 +9,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function CommuterGuide() {
   const [currentStep, setCurrentStep] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const intervalRef = useRef(null);
 
   const steps = [
     {
@@ -94,14 +95,27 @@ export default function CommuterGuide() {
     setCurrentStep(index);
   };
 
-  // Auto-slide functionality - loop every 3 seconds
+  // Auto-slide functionality - loop every 3 seconds, pause on hover
   useEffect(() => {
-    const autoSlideInterval = setInterval(() => {
+    if (isPaused) {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+        intervalRef.current = null;
+      }
+      return;
+    }
+
+    intervalRef.current = setInterval(() => {
       setCurrentStep((prev) => (prev < steps.length - 1 ? prev + 1 : 0));
     }, 3000);
 
-    return () => clearInterval(autoSlideInterval);
-  }, [steps.length]);
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+        intervalRef.current = null;
+      }
+    };
+  }, [isPaused, steps.length]);
 
   // Keyboard navigation
   useEffect(() => {
@@ -209,12 +223,12 @@ export default function CommuterGuide() {
           <div className="card bg-base-100 shadow-2xl border border-base-300">
             <div className="card-body p-6 md:p-8">
               {/* Step Counter & Navigation */}
-              <div className="flex items-center justify-between mb-6">
-                <div className="flex items-center gap-4">
-                  <div className="badge badge-primary badge-lg px-4 py-3 text-white">
+              <div className="flex items-center justify-between mb-6 flex-wrap gap-2">
+                <div className="flex items-center gap-2 sm:gap-4 flex-wrap">
+                  <div className="badge badge-primary text-white px-3 py-2 sm:px-4 sm:py-3 text-xs sm:text-sm md:badge-lg">
                     Step {currentStep + 1} of {steps.length}
                   </div>
-                  <div className="text-sm text-base-content/60">
+                  <div className="text-xs sm:text-sm text-base-content/60">
                     {currentStepData.title}
                   </div>
                 </div>
@@ -241,7 +255,11 @@ export default function CommuterGuide() {
               {/* Image & Content */}
               <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-center">
                 {/* Image */}
-                <div className="mx-auto rounded-2xl overflow-hidden shadow-xl">
+                <div 
+                  className="mx-auto rounded-2xl overflow-hidden shadow-xl transition-transform duration-300 ease-in-out hover:scale-110 cursor-pointer"
+                  onMouseEnter={() => setIsPaused(true)}
+                  onMouseLeave={() => setIsPaused(false)}
+                >
                   <Image
                     src={currentStepData.image}
                     alt={`Step ${currentStep + 1}: ${currentStepData.title}`}
@@ -255,7 +273,7 @@ export default function CommuterGuide() {
                 {/* Description */}
                 <div className="space-y-4 step-content">
                   <div>
-                    <h3 className="text-2xl md:text-3xl font-bold text-base-content mb-3">
+                    <h3 className="text-2xl md:text-3xl font-bold text-primary mb-3">
                       {currentStepData.title}
                     </h3>
                     <p className="text-base md:text-lg text-base-content/70 leading-relaxed">

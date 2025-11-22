@@ -1,16 +1,27 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import { useGSAP } from '@gsap/react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import RateLimiter from '@/utils/rateLimiter';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function DownloadSection() {
   const [commuterSource, setCommuterSource] = useState('vercel');
   const [driverSource, setDriverSource] = useState('vercel');
+  const [loading, setLoading] = useState({
+    commuter: { vercel: false, mega: false },
+    driver: { vercel: false, mega: false }
+  });
+  const [disabled, setDisabled] = useState({
+    commuter: { vercel: false, mega: false },
+    driver: { vercel: false, mega: false }
+  });
+
+  const rateLimiter = useRef(new RateLimiter(5000)).current;
 
   // Download URLs
   const downloadUrls = {
@@ -22,6 +33,63 @@ export default function DownloadSection() {
       vercel: 'https://piqohdefsahpbybs.public.blob.vercel-storage.com/Tara-vel-driver_release_v1.apk',
       mega: 'https://mega.nz/file/WEFx0KqY#ZNT0HuZXMtxVF4wmu3SHSKng1PEJRrS5JpLl2VsU3YM'
     }
+  };
+
+  // Check and update disabled state for rate limiting
+  useEffect(() => {
+    const checkDisabled = () => {
+      setDisabled({
+        commuter: {
+          vercel: rateLimiter.getRemainingMs('commuter-vercel') > 0,
+          mega: rateLimiter.getRemainingMs('commuter-mega') > 0
+        },
+        driver: {
+          vercel: rateLimiter.getRemainingMs('driver-vercel') > 0,
+          mega: rateLimiter.getRemainingMs('driver-mega') > 0
+        }
+      });
+    };
+
+    checkDisabled();
+    const interval = setInterval(checkDisabled, 100);
+
+    return () => clearInterval(interval);
+  }, [rateLimiter]);
+
+  // Handle download with rate limiting and delay
+  const handleDownload = async (type, source) => {
+    const key = `${type}-${source}`;
+    
+    const { allowed } = rateLimiter.canExecute(key);
+    if (!allowed) {
+      return;
+    }
+
+    setLoading(prev => ({
+      ...prev,
+      [type]: { ...prev[type], [source]: true }
+    }));
+
+    await new Promise(resolve => setTimeout(resolve, 500));
+
+    rateLimiter.execute(key, () => {
+      const url = downloadUrls[type][source];
+      const link = document.createElement('a');
+      link.href = url;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      if (source === 'vercel') {
+        link.download = url.split('/').pop();
+      }
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    });
+
+    setLoading(prev => ({
+      ...prev,
+      [type]: { ...prev[type], [source]: false }
+    }));
   };
   // GSAP animations
   useGSAP(() => {
@@ -154,7 +222,7 @@ export default function DownloadSection() {
                     onClick={() => setCommuterSource('vercel')}
                   >
                     <i className={`fas fa-cloud mr-2 ${commuterSource === 'vercel' ? 'text-white' : ''}`}></i>
-                    Vercel
+                    CDN
                   </button>
                   <button
                     className={`btn flex-1 ${commuterSource === 'mega' ? 'bg-error/20 text-error border-error/40 hover:bg-error/30' : 'btn-outline'}`}
@@ -173,16 +241,23 @@ export default function DownloadSection() {
               </div>
 
               <div className="space-y-3">
-                <a
-                  href={downloadUrls.commuter[commuterSource]}
-                  className="btn btn-lg w-full flex items-center justify-center border border-success text-success bg-transparent hover:bg-success hover:text-white transition-colors download-btn"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  download={commuterSource === 'vercel'}
+                <button
+                  onClick={() => handleDownload('commuter', commuterSource)}
+                  disabled={disabled.commuter[commuterSource] || loading.commuter[commuterSource]}
+                  className="btn btn-lg w-full flex items-center justify-center border border-success text-success bg-transparent hover:bg-success hover:text-white transition-colors download-btn disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  <span>Download APK</span>
-                  <i className="fas fa-download ml-2"></i>
-                </a>
+                  {loading.commuter[commuterSource] ? (
+                    <>
+                      <span className="loading loading-spinner loading-sm mr-2"></span>
+                      <span>Preparing...</span>
+                    </>
+                  ) : (
+                    <>
+                      <span>Download APK</span>
+                      <i className="fas fa-download ml-2"></i>
+                    </>
+                  )}
+                </button>
                 <div className="flex items-center justify-center gap-2 flex-wrap">
                   <div className="badge badge-success badge-outline">
                     <i className="fas fa-check mr-1"></i>
@@ -228,7 +303,7 @@ export default function DownloadSection() {
                     onClick={() => setDriverSource('vercel')}
                   >
                     <i className={`fas fa-cloud mr-2 ${driverSource === 'vercel' ? 'text-white' : ''}`}></i>
-                    Vercel
+                    CND
                   </button>
                   <button
                     className={`btn flex-1 ${driverSource === 'mega' ? 'bg-error/20 text-error border-error/40 hover:bg-error/30' : 'btn-outline'}`}
@@ -247,16 +322,23 @@ export default function DownloadSection() {
               </div>
 
               <div className="space-y-3">
-                <a
-                  href={downloadUrls.driver[driverSource]}
-                  className="btn btn-lg w-full flex items-center justify-center border border-primary text-primary bg-transparent hover:bg-primary hover:text-white transition-colors download-btn"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  download={driverSource === 'vercel'}
+                <button
+                  onClick={() => handleDownload('driver', driverSource)}
+                  disabled={disabled.driver[driverSource] || loading.driver[driverSource]}
+                  className="btn btn-lg w-full flex items-center justify-center border border-primary text-primary bg-transparent hover:bg-primary hover:text-white transition-colors download-btn disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  <span>Download APK</span>
-                  <i className="fas fa-download ml-2"></i>
-                </a>
+                  {loading.driver[driverSource] ? (
+                    <>
+                      <span className="loading loading-spinner loading-sm mr-2"></span>
+                      <span>Preparing...</span>
+                    </>
+                  ) : (
+                    <>
+                      <span>Download APK</span>
+                      <i className="fas fa-download ml-2"></i>
+                    </>
+                  )}
+                </button>
                 <div className="flex items-center justify-center gap-2 flex-wrap">
                   <div className="badge badge-primary badge-outline">
                     <i className="fas fa-check mr-1"></i>

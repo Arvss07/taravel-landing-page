@@ -8,6 +8,7 @@ import TeamSection from "../components/TeamSection";
 import ContactSection from "../components/ContactSection";
 import FAQsSection from "../components/FAQsSection";
 import Footer from "../components/Footer";
+import { safeJsonStringify } from "@/utils/security";
 
 export const metadata = {
   title: "Tara-vel - Smart Public Transportation App for Cagayan Valley",
@@ -172,31 +173,31 @@ export default function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(websiteSchema),
+          __html: safeJsonStringify(websiteSchema),
         }}
       />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(organizationSchema),
+          __html: safeJsonStringify(organizationSchema),
         }}
       />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(softwareApplicationSchema),
+          __html: safeJsonStringify(softwareApplicationSchema),
         }}
       />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbSchema),
+          __html: safeJsonStringify(breadcrumbSchema),
         }}
       />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(faqSchema),
+          __html: safeJsonStringify(faqSchema),
         }}
       />
       {/* Navigation Component */}
