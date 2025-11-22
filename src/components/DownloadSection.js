@@ -312,7 +312,7 @@ export default function DownloadSection() {
                 <div className="flex items-center justify-center gap-2 flex-wrap">
                   <div className="badge badge-success badge-outline">
                     <i className="fas fa-check mr-1"></i>
-                    Version 1.0
+                    Version 2.1
                   </div>
                   <div className="badge badge-ghost text-xs">
                     {commuterSource === "vercel" ? (
@@ -416,7 +416,7 @@ export default function DownloadSection() {
                 <div className="flex items-center justify-center gap-2 flex-wrap">
                   <div className="badge badge-primary badge-outline">
                     <i className="fas fa-check mr-1"></i>
-                    Version 1.0
+                    Version 2.1
                   </div>
                   <div className="badge badge-ghost text-xs">
                     {driverSource === "vercel" ? (
