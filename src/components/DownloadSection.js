@@ -29,7 +29,7 @@ export default function DownloadSection() {
       mega: "https://mega.nz/file/iMMyUJQI#zLT-R1im78Syiux-bsYekF4N80bkr2uUxnEENF3iCcs",
     },
     driver: {
-      mega: "https://mega.nz/file/iBs22RqA#PZcK9qWPVA0cqzx8ITWMUClE9R04WtKvOywwCzJgu0w",
+      mega: "https://mega.nz/file/bI1UBaLD#dEaJuZRFB6CeAfvIIp5UocwZw_rHQ0zetTXaRin_oiU",
     },
   };
 
