@@ -10,8 +10,8 @@ import RateLimiter from "@/utils/rateLimiter";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function DownloadSection() {
-  const [commuterSource, setCommuterSource] = useState("vercel");
-  const [driverSource, setDriverSource] = useState("vercel");
+  const [commuterSource, setCommuterSource] = useState("mega");
+  const [driverSource, setDriverSource] = useState("mega");
   const [loading, setLoading] = useState({
     commuter: { vercel: false, mega: false },
     driver: { vercel: false, mega: false },
@@ -26,14 +26,10 @@ export default function DownloadSection() {
   // Download URLs
   const downloadUrls = {
     commuter: {
-      vercel:
-        "https://piqohdefsahpbybs.public.blob.vercel-storage.com/Tara-vel_release-v2.1.apk",
       mega: "https://mega.nz/file/iMMyUJQI#zLT-R1im78Syiux-bsYekF4N80bkr2uUxnEENF3iCcs",
     },
     driver: {
-      vercel:
-        "https://piqohdefsahpbybs.public.blob.vercel-storage.com/Tara-vel-driver_release-v2.apk",
-      mega: "https://mega.nz/file/2UEgxBYa#kKcW5bbawDzSU9qF7CB1qchPgg6IzzrjMFmlPcFcyZY",
+      mega: "https://mega.nz/file/iBs22RqA#PZcK9qWPVA0cqzx8ITWMUClE9R04WtKvOywwCzJgu0w",
     },
   };
 
@@ -62,6 +58,13 @@ export default function DownloadSection() {
   const handleDownload = async (type, source) => {
     const key = `${type}-${source}`;
 
+    // Check if URL exists for the selected source
+    const url = downloadUrls[type]?.[source];
+    if (!url) {
+      console.warn(`Download URL not available for ${type} from ${source}`);
+      return;
+    }
+
     const { allowed } = rateLimiter.canExecute(key);
     if (!allowed) {
       return;
@@ -75,7 +78,6 @@ export default function DownloadSection() {
     await new Promise((resolve) => setTimeout(resolve, 500));
 
     rateLimiter.execute(key, () => {
-      const url = downloadUrls[type][source];
       const link = document.createElement("a");
       link.href = url;
       link.target = "_blank";
@@ -260,6 +262,7 @@ export default function DownloadSection() {
                         : "btn-outline"
                     }`}
                     onClick={() => setCommuterSource("vercel")}
+                    disabled={true}
                   >
                     <i
                       className={`fas fa-cloud mr-2 ${
@@ -364,6 +367,7 @@ export default function DownloadSection() {
                         : "btn-outline"
                     }`}
                     onClick={() => setDriverSource("vercel")}
+                    disabled={true}
                   >
                     <i
                       className={`fas fa-cloud mr-2 ${
