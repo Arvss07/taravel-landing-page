@@ -26,7 +26,7 @@ export default function DownloadSection() {
   // Download URLs
   const downloadUrls = {
     commuter: {
-      mega: "https://mega.nz/file/SUNUzJiC#PM2-43BGtuz2syrLjh58Ma9t1pMshBTS0y4gCHhkdYE",
+      mega: "https://mega.nz/file/zQNDBDJD#KP_ggpoVnbiEBYVXFbHTOj3QDW_qoCKcizhQzijlD5w",
     },
     driver: {
       mega: "https://mega.nz/file/WIlwQSBI#SS4anZmc5nusmS_Xn8L4gC3DtJoqxdbnXJk685AAJfU",
