@@ -26,10 +26,10 @@ export default function DownloadSection() {
   // Download URLs
   const downloadUrls = {
     commuter: {
-      mega: "https://mega.nz/file/iMMyUJQI#zLT-R1im78Syiux-bsYekF4N80bkr2uUxnEENF3iCcs",
+      mega: "https://mega.nz/file/PV1nGarB#X383AbPiO6SO_4cD8y-klNa5KzB99pUBVFxrJFsnX9A",
     },
     driver: {
-      mega: "https://mega.nz/file/iBs22RqA#PZcK9qWPVA0cqzx8ITWMUClE9R04WtKvOywwCzJgu0w",
+      mega: "https://mega.nz/file/WIlwQSBI#SS4anZmc5nusmS_Xn8L4gC3DtJoqxdbnXJk685AAJfU",
     },
   };
 
