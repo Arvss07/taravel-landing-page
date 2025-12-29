@@ -26,7 +26,7 @@ export default function DownloadSection() {
   // Download URLs
   const downloadUrls = {
     commuter: {
-      mega: "https://mega.nz/file/zQNDBDJD#KP_ggpoVnbiEBYVXFbHTOj3QDW_qoCKcizhQzijlD5w",
+      mega: "https://mega.nz/file/LQtzBRjS#ig0dRtW1wXisYJ7ar2qG0QfoJ3l3nAu-nKtdIFQVbKU",
     },
     driver: {
       mega: "https://mega.nz/file/WIlwQSBI#SS4anZmc5nusmS_Xn8L4gC3DtJoqxdbnXJk685AAJfU",
@@ -315,7 +315,7 @@ export default function DownloadSection() {
                 <div className="flex items-center justify-center gap-2 flex-wrap">
                   <div className="badge badge-success badge-outline">
                     <i className="fas fa-check mr-1"></i>
-                    Version 2.1
+                    Version 3
                   </div>
                   <div className="badge badge-ghost text-xs">
                     {commuterSource === "vercel" ? (
@@ -420,7 +420,7 @@ export default function DownloadSection() {
                 <div className="flex items-center justify-center gap-2 flex-wrap">
                   <div className="badge badge-primary badge-outline">
                     <i className="fas fa-check mr-1"></i>
-                    Version 2.1
+                    Version 3
                   </div>
                   <div className="badge badge-ghost text-xs">
                     {driverSource === "vercel" ? (
